@@ -16,7 +16,9 @@ function [x,Out]=My_AREABK(A,b,ell,opts)
 % Out.iter: the total number of iteration
 % ....
 %
-% Based on the manuscript:
+% Based on the manuscript: On adaptive stochastic extended iterative methods
+% for solving least squares, Yun Zeng, Deren Han, Yansheng Su, 
+% and Jiaxin Xie, https://arxiv.org/abs/2405.19044
 %
 % Coded by Jiaxin Xie, Beihang University, xiejx@buaa.edu.cn
 %
