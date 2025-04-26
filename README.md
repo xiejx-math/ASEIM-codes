@@ -9,8 +9,10 @@
 
    * "Demo_real_data" (Table 1)
 
-   * "Demo_LIBSVM" (Figure 3)
+   * Demo_comp_diff_solvers (Figures 3 and 4)
 
-   *  "Demo_comp_Matlab" (Figure 4)
+   * "Demo_LIBSVM" (Figure 5)
+
+   *  "Demo_comp_Matlab" (Figure 6)
   
     
