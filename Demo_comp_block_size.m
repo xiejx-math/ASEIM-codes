@@ -3,15 +3,16 @@ close all;
 clear;
 
 ss=7;
-m=2^(ss+3);
-n=2^ss;
-rank=n;
-kappa=10;
+log_p=2;
+m=log_p^(ss+3);
+n=log_p^ss;
+rank=100;
+kappa=40;
 
-test_interval=0:1:log2(m);
+test_interval=0:1:log(m)/log(log_p);
 sizeP=length(test_interval);
 
-run_times=50;% average times
+run_times=20;% average times
 
 %%
 REABKtimes=zeros(run_times,sizeP);
@@ -30,7 +31,7 @@ Rho_upperbound=zeros(run_times,sizeP);
 
 
 for ii=1:sizeP
-    ell=2^(test_interval(ii));
+    ell=log_p^(test_interval(ii));
     for jj=1:run_times
 
         [U,~]=qr(randn(m, rank), 0);
@@ -163,12 +164,12 @@ p2=semilogy( xlable, median(y2'), 'blue', 'LineWidth', 1,...
             'LineStyle', '-','Marker', 's', 'DisplayName', 'RABK');
 p3=semilogy( xlable, median(y3'), 'green', 'LineWidth', 1,...
             'LineStyle', '-','Marker', '^', 'DisplayName', 'RABK');
-ylabel('CPU')
-xlabel('$\log_2(p)$','Interpreter', 'latex')
+ylabel('CPU','FontSize',15)
+xlabel('$\log_2(p)$','Interpreter', 'latex','FontSize',15)
 %legend('RABK','location', 'best')
-legend([p1 p2 p3],{'REABK','AREABK','AmREABK'},'Interpreter', 'latex','location', 'best')
-txt=title(['{\tt randn}',',$m=$ ',num2str(m),',$n=$ ',num2str(n),',$r=$ ',num2str(rank),',$\kappa=$ ',num2str(kappa)]);
-set(txt, 'Interpreter', 'latex');
+legend([p1 p2 p3],{'REABK','AREABK','AmREABK'},'Interpreter', 'latex','location', 'best','FontSize',14)
+txt=title(['{\tt randn}',', $m=$ ',num2str(m),', $n=$ ',num2str(n),', $r=$ ',num2str(rank),', $\kappa=$ ',num2str(kappa)]);
+set(txt, 'Interpreter', 'latex','FontSize',17);
 
 
 
@@ -233,12 +234,12 @@ p2=semilogy( xlable, median(y2'), 'blue', 'LineWidth', 1,...
 p3=semilogy( xlable, median(y3'), 'green', 'LineWidth', 1,...
             'LineStyle', '-','Marker', '^', 'DisplayName', 'RABK');
 %%
-ylabel('Convergence factors')
-xlabel('$\log_2(p)$','Interpreter', 'latex')
+ylabel('Convergence factors','FontSize',15)
+xlabel('$\log_2(p)$','Interpreter', 'latex','FontSize',15)
 %legend('RABK','location', 'best')
-legend([p4 p1 p2 p3],{'Upper bound','REABK','AREABK','AmREABK'},'Interpreter', 'latex','location', 'southeast')
-txt=title(['{\tt randn}',',$m=$ ',num2str(m),',$n=$ ',num2str(n),',$r=$ ',num2str(rank),',$\kappa=$ ',num2str(kappa)]);
-set(txt, 'Interpreter', 'latex');
+legend([p4 p1 p2 p3],{'Upper bound','REABK','AREABK','AmREABK'},'Interpreter', 'latex','location', 'southeast','FontSize',14)
+txt=title(['{\tt randn}',', $m=$ ',num2str(m),', $n=$ ',num2str(n),', $r=$ ',num2str(rank),', $\kappa=$ ',num2str(kappa)]);
+set(txt, 'Interpreter', 'latex','FontSize',17);
 %%
 axesposition=[0.21,0.17,0.3,0.32];
 axes('position',axesposition);
@@ -327,12 +328,12 @@ p2=semilogy( xlable, median(y2'), 'blue', 'LineWidth', 1,...
             'LineStyle', '-','Marker', 's', 'DisplayName', 'RABK');
 p3=semilogy( xlable, median(y3'), 'green', 'LineWidth', 1,...
             'LineStyle', '-','Marker', '^', 'DisplayName', 'RABK');
-ylabel('$k \cdot \frac{p}{m}$','Interpreter', 'latex')
-xlabel('$\log_2(p)$','Interpreter', 'latex')
+ylabel('$k \cdot \frac{p}{m}$','Interpreter', 'latex','FontSize',15)
+xlabel('$\log_2(p)$','Interpreter', 'latex','FontSize',15)
 %legend('RABK','location', 'best')
-legend([p1 p2 p3],{'REABK','AREABK','AmREABK'},'Interpreter', 'latex','location', 'northeast')
-txt=title(['{\tt randn}',',$m=$ ',num2str(m),',$n=$ ',num2str(n),',$r=$ ',num2str(rank),',$\kappa=$ ',num2str(kappa)]);
-set(txt, 'Interpreter', 'latex');
+legend([p1 p2 p3],{'REABK','AREABK','AmREABK'},'Interpreter', 'latex','location', 'northeast','FontSize',14)
+txt=title(['{\tt randn}',', $m=$ ',num2str(m),', $n=$ ',num2str(n),', $r=$ ',num2str(rank),', $\kappa=$ ',num2str(kappa)]);
+set(txt, 'Interpreter', 'latex','FontSize',14);
 %%
 axesposition=[0.21,0.57,0.3,0.32];
 axes('position',axesposition);

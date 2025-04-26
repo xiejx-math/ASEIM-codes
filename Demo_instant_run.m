@@ -7,7 +7,7 @@ n=128;
 
 rank=100;
 
-kappa=40;
+kappa=0;
 
 [U,~]=qr(randn(m, rank), 0);
 [V,~]=qr(randn(n, rank), 0);
@@ -18,9 +18,14 @@ A=U*D*V';
 
 A=full(A);
 x=randn(n,1);
-Z=null(full(A)');
-r=Z*randn(size(Z,2),1);
+%Z=null(full(A)');
+%r=Z*randn(size(Z,2),1);
+%b=A*x+r;
+r1=randn(m,1);
+r=r1-U*(U'*r1);
 b=A*x+r;
+clear U V D 
+
 if rank==n
     xLS=x;
 else

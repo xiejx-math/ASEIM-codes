@@ -101,10 +101,10 @@ max_val_in_plot = 1;
 [x_arrays_iter, quantiles_iter] =  compute_and_plot_LIBSVM_quantiles_in_logscale(num_iter_array, arrsIter, ...
     num_methods, line_colors, display_names, ...
     minmax_colors, quant_colors, display_legend, max_val_in_plot);
-ylabel('RSE')
-xlabel('Iter')
-txt=title( ['{\tt cod-rna}',',$m=$ ',num2str(m),',$n=$ ',num2str(n)]);
-set(txt, 'Interpreter', 'latex');
+ylabel('RSE','FontSize',15)
+xlabel('Iter','FontSize',15)
+txt=title( ['{\tt ijcnn1}',', $m=$ ',num2str(m),', $n=$ ',num2str(n)]);
+set(txt, 'Interpreter', 'latex','FontSize',17);
 
 %% plot the CPU time
 maxCPU_AmRABK=max(max(CPU_AREABK));
@@ -119,9 +119,10 @@ num_iter_array=xlabel_i';
 [x_arrays_iter, quantiles_iter] =  compute_and_plot_LIBSVM_quantiles_in_logscale(num_iter_array, arrsIter, ...
     num_methods, line_colors, display_names, ...
     minmax_colors, quant_colors, display_legend, max_val_in_plot);
-ylabel('RSE')
-xlabel('CPU time')
-txt=title( ['{\tt cod-rna}',',$m=$ ',num2str(m),',$n=$ ',num2str(n)]);
-set(txt, 'Interpreter', 'latex');
+ylabel('RSE','FontSize',15)
+xlabel('CPU time','FontSize',15)
+xlim([0,0.5])
+txt=title( ['{\tt ijcnn1}',', $m=$ ',num2str(m),', $n=$ ',num2str(n)]);
+set(txt, 'Interpreter', 'latex','FontSize',17);
 
 
