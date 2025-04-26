@@ -6,7 +6,7 @@ clear;
 %m=100;
 n=1000;
 ell=300;
-run_times=10;
+run_times=20;
 rank=n;
 kappa=10;
 

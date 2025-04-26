@@ -7,7 +7,7 @@ close all;
 %%
 opts.Max_iter=100; % Number of iterations
 ell=300;% size of the block
-run_times=50; % average times
+run_times=20; % average times
 
 %% LIBSVM data
 %load a9a; %Max_iter=2500

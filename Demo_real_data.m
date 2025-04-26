@@ -5,7 +5,7 @@ close all;
 clear;
 
 %%
-run_times=50; % average times
+run_times=20; % average times
 
 %% generated the matrix A using the data from SuiteSparse Matrix Collection
 

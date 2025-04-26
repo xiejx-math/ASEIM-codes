@@ -8,7 +8,7 @@ ell=500;
 kappa=10;
 rank=n;% full column rank to ensure that x is the minimum Euclidean norm least-squares solution
 
-run_times=1; % average times
+run_times=20; % average times
 opts.Max_iter=60000;
 mm=40000:10000:100000;
 valuem=[30000 35000 mm];
